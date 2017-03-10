@@ -1,0 +1,45 @@
+<template name="featured">
+  <div class="container-main showhide">
+    <div class="alert alert-success" role="alert"><h4><b>CHECK OUR NEW ARRIVALS!</b></h4></div>
+    <div class="product-grid">
+      <ul class="product-grid-list list-unstyled" id="product-grid-list">
+        {{#each product in products}}
+        {{#if product.handle}}
+        <li class="product-grid-item product-small" data-id=product._id id=product._id>
+        <a class="product-grid-item-images"
+          href="{{pdpPath product.handle}}"
+          data-event-category="grid"
+          data-event-action="productClick"
+          data-event-label="grid product click"
+          data-event-value="product._id">
+          <div class="product-primary-images">
+            {{#with media product._id}}
+              <span class="product-image" style="background-image: url('{{url store='large'}}')"></span>
+            {{else}}
+              <span class="product-image" style="background-image: url(/resources/placeholder.gif)"></span>
+            {{/with}}
+          </div> <!-- End of image -->
+        </a>
+        <div class="grid-content">
+          <a href="{{pdpPath product.handle}}"
+            data-event-category="grid"
+            data-event-action="productClick"
+            data-event-label="grid product click"
+            data-event-value="product._id">
+          <div class="overlay">
+            <div class="overlay-title">{{product.title}}</div>
+            {{#if product.price.range}}
+              <div class="currency-symbol">{{formatPrice product.price.range}}</div>
+            {{else}}
+              <div class="currency-symbol">{{formatPrice product.price}}</div>
+            {{/if}}
+          </div>
+          </a>
+        </div> <!-- End of Product price details -->
+      </li>
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+  </div>
+</template>

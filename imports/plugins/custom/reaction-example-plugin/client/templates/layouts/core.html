@@ -1,0 +1,44 @@
+<template name="coreLayoutBeesknees">
+{{#if hasDashboardAccess}}
+  {{> coreAdminLayout}}
+{{else}}
+    <nav class="reaction-navigation-header">
+      <!-- begin layoutHeader -->
+      {{> Template.dynamic template=layoutHeader}}
+      <!-- end layoutHeader -->
+    </nav>
+
+    <nav class="reaction-cart-drawer">
+      {{>cartDrawer}}
+    </nav>
+
+<div class="container-main showhide">
+{{> slider}}
+</div>
+
+  <main role="main" id="main">
+
+    <!-- <div class="rui beesknees">
+      <div class="bkdebug"><em>Bee's Knees layout</em></div>
+      <div class="bkdebug"><em>layoutHeader template:</em> {{layoutHeader}}</div>
+      <div class="bkdebug"><em>layoutFooter template:</em> {{layoutFooter}}</div>
+      <div class="bkdebug"><em>Main Template:</em> {{template}}</div>
+    </div> -->
+    <span id="layout-alerts">{{> inlineAlerts}}</span>
+    {{#if hasPermission 'guest'}}
+      <!-- begin template region -->
+      {{> featured}}
+
+      <div class="container-main showhide"> <!--Start of code for showing all products-->
+        <div class="alert alert-success" role="alert"><h4><b>FEATURED PRODUCTS</b></h4></div>
+      </div> <!--End of code for showing all products -->
+
+       {{> Template.dynamic template=template}}
+
+      <!-- end template region -->
+    {{/if}}
+    <footer class="reaction-navigation-footer footer-default">{{> Template.dynamic template=layoutFooter}}</footer>
+  </main>
+
+{{/if}}
+</template>
