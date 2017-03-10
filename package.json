@@ -1,5 +1,5 @@
 {
-  "name": "reaction",
+  "name": "getmydeal",
   "description": "Reaction is a modern reactive, real-time event driven ecommerce platform.",
   "version": "0.19.1",
   "main": "main.js",
@@ -11,7 +11,7 @@
   "email": "reaction@reactioncommerce.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/reactioncommerce/reaction.git"
+    "url": "git+https://github.com/reactioncommerce/reaction.git"
   },
   "author": "Reaction Commerce <hello@reactioncommerce.com>",
   "license": "GPL-3.0",
