@@ -1,0 +1,21 @@
+<template name="contact">
+
+<div class="container">
+  <div> {{> loginButtons}} </div>
+
+
+    {{> quickForm collection="Recipes" id="insertRecipeForm" type="insert" class="new-recipe-form"}}
+
+    <div>
+      {{#if Template.subscriptionsReady}}
+          {{#each recipes}}
+            {{> Recipe }}
+          {{/each}}
+      {{else}}
+          <p> Loading.. </p>
+      {{/if}}
+  </div>
+</div>
+
+
+</template>
