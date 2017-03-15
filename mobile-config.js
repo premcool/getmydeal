@@ -11,7 +11,7 @@ App.info({
   description: 'Getmydeal',
   author: 'Prolysi',
   email: 'info@prolysi.com',
-  website: 'http://prolysi.com'
+  website: 'https://getmydeal.prolysi.com'
 });
 
 // Set up resources such as icons and launch screens.
